@@ -1,0 +1,123 @@
+# CLAUDE.md — [PROJECT NAME]
+
+[1-line description: what this repo is + who consumes it]
+
+## Hard rules
+
+### Style
+- [Voice register with you (the founder/owner) — e.g. casual Indonesian gue/lo, or English direct]
+- [User-facing copy register — e.g. universal aku/kamu, formal Bahasa, English-only]
+- [Decisive short answers > long hedges]
+- [No preamble — get to the point]
+- [1 question per response max]
+
+### Never
+- Skim read. Read every line of relevant files before recommending changes.
+- Soften critique to avoid discomfort.
+- Push to remote without explicit user instruction.
+- Auto-deploy without ship verification (3-gate: tsc → build → curl).
+- Generate fake data, fake stats, fake quotes, fake citations.
+- [PROJECT-SPECIFIC NEVER — e.g. "Never query bookings table — use leads"]
+- [PROJECT-SPECIFIC NEVER]
+
+### Always
+- Verify by reading source files, not summaries.
+- Flag uncertainty explicitly.
+- Surface contrarian view when warranted.
+- [PROJECT-SPECIFIC ALWAYS — e.g. "Always run `npm run lint` before claiming shipped"]
+- [PROJECT-SPECIFIC ALWAYS]
+
+## Stack
+
+| Layer | Choice | Notes |
+|---|---|---|
+| Frontend | [Next.js / Astro / Remix / etc] | [version, app router?, etc] |
+| Database | [Supabase / Postgres / etc] | [RLS-enforced? service role usage?] |
+| Hosting | [Vercel / Cloudflare / VPS] | |
+| Payments | [Xendit / Stripe / etc] | [per-operator? marketplace-fee?] |
+| Email | [Resend / Postmark / etc] | |
+| Monitoring | [Sentry / BetterStack / GlitchTip] | |
+
+## Project structure
+
+```
+[REPO_NAME]/
+├── [mention key folders + their purpose]
+└── [...]
+```
+
+## Domain rules (NON-NEGOTIABLE)
+
+[List of business rules that MUST hold. These override Claude's defaults.]
+
+1. [Rule 1 — e.g. "One tenant CANNOT see another tenant's data. Ever."]
+2. [Rule 2 — e.g. "Hold expires 24h after creation — auto-release if no payment."]
+3. [...]
+
+## Voice + register
+
+[How user-facing copy is written. Examples:]
+- Tone: [warm-curator / utility-direct / playful / etc]
+- Pronouns: [aku/kamu / Anda / English-only]
+- Forbidden words: [list]
+- Required cadence: [e.g. "no more than 1 sentence per paragraph in mobile-first contexts"]
+
+## Communication modes
+
+### Strategic mode
+[When to use, what changes — e.g. cross-product decisions, architecture]
+
+### Tactical mode
+[When to use — e.g. specific bug fix, feature implementation]
+
+### Brainstorm mode
+[When to use — e.g. exploring new feature]
+
+## Sessions
+
+### Triggers
+- **`start`** → read CLAUDE.md (this file) + SESSION.md + brief status format
+- **`accio!`** → save+commit ritual: update SESSION.md, update RUBY_BRIEF.md, version bump, single commit
+- **`monyet!`** → mid-session save signal for strategic decisions
+- **`sync!`** → cross-repo state pull (consumer-side, see ~/Documents/ruby-assistant/CLAUDE.md sync! protocol)
+
+### Session start checklist
+1. Read CLAUDE.md (this file)
+2. Read SESSION.md (current state, last session, next actions)
+3. [Other reads specific to this project]
+4. Brief: "Active: [X]. Last: [Y]. Next: [Z]. Blockers: [N]. Mau apa, bro?"
+
+## Cross-repo dependencies
+
+[How this repo relates to others — what it consumes, what it produces]
+
+```
+[REPO] consumes: [...]
+[REPO] produces: [...]
+```
+
+## Current version
+
+v[X.Y.Z] — [last meaningful update date + 1-line summary]
+
+## Source-of-truth
+
+[Where authoritative data lives — e.g. "Customer ID is the WhatsApp number, normalized to E.164"]
+
+## Common pitfalls
+
+[Project-specific gotchas, often discovered via incident. Examples:]
+- [Pitfall — discovered when X happened. Fix: Y.]
+- [...]
+
+---
+
+## How to use this template
+
+1. Fork this file into the root of your repo as `CLAUDE.md`.
+2. Replace every `[PLACEHOLDER]` with project-specific content.
+3. Delete sections you don't need (most projects don't need all sections).
+4. Add sections specific to your domain (e.g. for a content site, add "Editorial voice rules").
+5. Keep updating it. Stale CLAUDE.md = production incidents (see `examples/article-5-db-orphan.md` for a real case).
+
+This template extracted from running 8+ active ventures. See parent `claude-code-kit` repo for context.

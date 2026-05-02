@@ -1,0 +1,79 @@
+---
+last_updated: 2026-MM-DDTHH:MM:SSZ
+version: vX.Y.Z
+---
+
+# RUBY_BRIEF — [REPO_NAME]
+
+Producer-side brief consumed by ruby-assistant `sync!` flow. Updates land here every meaningful session.
+
+## Current state
+
+- **Version**: vX.Y.Z (last bumped YYYY-MM-DD)
+- **Status**: 🟢 LIVE / 🟡 active build / 🔴 blocked / 🅿️ parked
+- **Live URL**: https://[domain]
+- **Last shipped**: YYYY-MM-DD — [1-line description of last meaningful ship]
+- **Active build**: [what's in flight]
+
+## Material Changes Since Last Brief
+
+[Bullet list of changes since last `last_updated` timestamp. Consumer-side reads THIS section first.]
+
+- + [shipped item] (commit [hash])
+- - [removed item — e.g. blocker cleared]
+- ~ [modified item — e.g. version bumped, status changed]
+
+## Items to Surface in ruby-assistant
+
+[Explicit instructions for ruby-assistant to act on. Skip if just informational.]
+
+- Update PROJECTS.md row for this venture (status: [X] → [Y])
+- Update SESSION.md priority queue (add: [Z])
+- Cross-link in `_holding.md` if cross-brand impact
+
+## Stack
+
+| Layer | Choice |
+|---|---|
+| Frontend | [...] |
+| DB | [...] |
+| Hosting | [...] |
+| Payments | [...] |
+
+## Active Blockers
+
+- [Blocker 1] — owner: [self / partner / external service]
+- [...]
+
+## Cross-Project Dependencies
+
+- Consumes: [list of repos/services this depends on]
+- Produces: [what this exposes to others]
+
+## Recent Commits
+
+```
+[hash] [type]: [short message]
+[hash] [type]: [short message]
+```
+
+## Next Up
+
+- [Top priority for next session]
+- [...]
+
+---
+
+## How to use this template
+
+This file is the **producer side** of the cross-repo memory protocol.
+
+1. Fork to root of any repo as `RUBY_BRIEF.md`.
+2. Update `last_updated` frontmatter with `date -u +"%Y-%m-%dT%H:%M:%SZ"` (UTC ISO-8601 with Z, NEVER local time, NEVER numeric offset).
+3. After each meaningful session, append to "Material Changes Since Last Brief" + bump `last_updated`.
+4. Run `accio!` ritual which updates this file + commits.
+5. Consumer side (ruby-assistant or equivalent strategic-memory folder) pulls via `sync!` and applies updates.
+
+See `docs/02-cross-repo-memory.md` (planned) for full protocol.
+
+This pattern adapted from running 8+ ventures under one holding. See parent `claude-code-kit` repo for context.

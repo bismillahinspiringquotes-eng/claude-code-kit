@@ -1,0 +1,15 @@
+.DS_Store
+node_modules/
+.env
+.env.local
+.env.*.local
+*.log
+.vscode/
+.idea/
+dist/
+build/
+.next/
+.vercel/
+coverage/
+.tmp-*
+*.tmp
