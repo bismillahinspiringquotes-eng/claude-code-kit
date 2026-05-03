@@ -92,3 +92,14 @@ When taking content from ruby-assistant private docs into this public repo:
 - Actual `RUBY_BRIEF.md` files from production repos (only `.template.md` versions)
 - VPS IP / SSH keys / Cloudflare API tokens
 - WhatsApp numbers, real phone numbers, real emails (use `example.com` domains)
+
+
+---
+
+## Cross-Holding Memory (auto-loaded at session start)
+
+@~/Documents/ruby-assistant/memory/CROSS_HOLDING_INDEX.md
+
+If `@`-import is not resolved by your Claude Code version: explicitly read `~/Documents/ruby-assistant/memory/CROSS_HOLDING_INDEX.md` and the linked feedback files at session start. These are universal rules across all Ruby holding repos (voice, deploy verification, default-to-execute, forensic discipline). Apply alongside this repo's CLAUDE.md.
+
+**Canonical source**: `~/Documents/ruby-assistant/memory/`. Never duplicate to this repo.
