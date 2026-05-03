@@ -135,13 +135,6 @@ When taking content from ruby-assistant private docs into this public repo:
 - v0.1.0 — first useful release: README + 3 core docs + CLAUDE.md template + RUBY_BRIEF template
 - v0.2+ — tooling additions (sync script, supabase guardrails, cost watch Action)
 
-## Cross-Reference
-
-- Original brainstorm: `~/Documents/ruby-assistant/projects/claude-code-kit.md`
-- OS landscape research: `~/Documents/ruby-assistant/projects/claude-code-kit-OS-RESEARCH.md`
-- Adversarial uniqueness verify: `~/Documents/ruby-assistant/projects/claude-code-kit-VERIFY.md`
-- Codebase recon (extract source): `~/Documents/ruby-assistant/projects/claude-code-kit-RECON.md`
-
 ## Do NOT include in this repo
 
 - Real Supabase project IDs, service role keys, API tokens (even in examples — sanitize)
