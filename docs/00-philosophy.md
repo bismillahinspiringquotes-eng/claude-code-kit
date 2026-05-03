@@ -27,9 +27,9 @@ This kit assumes you already have business context. It just gives you the veloci
 Build for the pain you actually feel. Every pattern in this kit comes from a real production failure — not a hypothetical. When you read a runbook here, it exists because something broke and someone wasted hours.
 
 Examples (real incidents, paraphrased):
-- "Phase 7.5 silent deploy fail" — TypeScript passed, Vercel build failed silently due to lint-as-error in production mode. Prod served stale code for 24 hours. Spawned the 3-gate verification rule.
-- "Article #5 DB-orphan" — MD file written + commit pushed, claimed shipped, page 404'd because /learn route reads from DB not filesystem. Spawned the SHIP VERIFICATION rule (curl the URL, not "deploy ran").
-- "Webhook subscription disappeared" — 8/8 rehearsal pass morning, ZERO rows by afternoon. Spawned cross-session forensic discipline.
+- *Silent deploy failure* — type-check passed, build appeared green, but production never received the change because the build platform failed silently on lint-as-error in production mode. Prod served stale code for 24 hours. Spawned the 3-gate verification rule (tsc → build → curl).
+- *Article DB-orphan* — a published article was orphaned from the production database for 24h because we trusted "commit pushed" instead of curl-ing the live URL. The MD file was written, the commit was pushed, but the page rendered from DB not filesystem — so it 404'd. Spawned the SHIP VERIFICATION rule (verify content from the user-facing URL, not "deploy ran").
+- *Webhook subscription disappeared* — a webhook subscription disappeared between morning rehearsal pass and afternoon production traffic — observable only at the consumer side, not in upstream logs. Spawned cross-session forensic discipline (verify state at the boundary, not just at the source).
 
 Every doc in this kit traces back to an incident. If a doc seems abstract, an incident is missing — file an issue.
 
