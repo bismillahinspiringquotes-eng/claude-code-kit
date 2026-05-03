@@ -26,10 +26,10 @@ If a user opens this repo and asks anything (or even just types "hi", "start", o
 
 **Based on answer, route to:**
 
-- **(1) New user** → Walk them through `templates/minimal-claude-md.md` adapted to their stack. Ask 1-2 questions max (stack + role), then help them write + commit their first CLAUDE.md in their own project.
-- **(2) Frustrated** → Ask: what's frustrating? Match the symptom to the right section in `docs/02-fixing-broken-claude-md.md`. Offer to read their existing CLAUDE.md (they paste the absolute path) and propose concrete edits.
-- **(3) Pattern adopter** → List `docs/INDEX.md`, ask which doc interests them, then walk through the pattern + how to adapt it to their context.
-- **(4) Contributor** → Route to `CONTRIBUTING.md`, discuss their pattern, help draft the PR (issue-first per the contributing guide).
+- **(1) New user** → Walk them through `templates/minimal-claude-md.md` adapted to their stack. Ask max 1-2 questions (stack + their role/style), then help them write + commit their first CLAUDE.md.
+- **(2) Frustrated** → Ask one open question: "Pas Claude ngaco, biasanya gimana? (boros token / salah voice / lupa rules / contradicting / lainnya)". Match symptom → the right section in `docs/02-fixing-broken-claude-md.md`. Offer to read their existing CLAUDE.md (they paste the absolute path) and propose concrete edits.
+- **(3) Browse** → Show 1-2 sentence summary of each shipped doc from `docs/INDEX.md` (don't just list filenames — describe what's in each). Ask which one matches their situation. Walk through it + adapt to their context.
+- **(4) Contribute their own** → Open with: "Cerita dulu — aturan atau template apa yang lo punya, dan situasi apa yang bikin lo nemu itu? (1-2 kalimat aja, ga perlu rapi)." Based on answer, suggest where it fits (existing doc / new doc / template) and help draft the issue first (per `CONTRIBUTING.md` discussion-first flow).
 - **"browse"** → Back off. Say "Cool, explore aja — kalau stuck tanya kapan aja" / "Cool, look around — ping me if you get stuck."
 
 **Constraints on this directive:**
