@@ -4,7 +4,15 @@
 
 > The boring infrastructure part. The bit that doesn't make YouTube thumbnails but actually makes you money.
 
-> **Start here →** [docs/01-claude-md-rules.md](docs/01-claude-md-rules.md) — the actual CLAUDE.md ruleset (Indonesian primary, English summary at top) running across 8 production repositories. Begins from "what rules do you actually put in CLAUDE.md?"
+## Start here
+
+**First time?** Open this repo in Claude Code (`cd claude-code-kit && claude`) and just say "halo" or "hi" — Claude will detect your situation and route you to the right next step. The kit teaches Claude Code patterns by USING them.
+
+**Just want to read?** Start with [docs/01-claude-md-rules.md](docs/01-claude-md-rules.md) — the actual CLAUDE.md ruleset running across 8 production repositories. Begins from "what rules do you actually put in CLAUDE.md?"
+
+**Claude misbehaves in your existing repo?** [docs/02-fixing-broken-claude-md.md](docs/02-fixing-broken-claude-md.md) — 6 common failure modes + fixes.
+
+**Want to contribute?** See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## What this is
 
