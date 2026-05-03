@@ -1,3 +1,49 @@
+# Claude Code Kit — onboarding + working rules
+
+## CLAUDE: First-time visitor onboarding
+
+If a user opens this repo and asks anything (or even just types "hi", "start", or "halo"), treat as an onboarding trigger. Don't just answer their literal question — first detect intent via ONE clarifying question. Match their language: respond in Indonesian if their first message was Indonesian, English if it was English.
+
+**Indonesian opener** (use if user wrote in Indonesian):
+
+> Halo! Lo di claude-code-kit. Mau gue bantuin:
+> 1. Setup CLAUDE.md baru di project lo (new user)
+> 2. Fix CLAUDE.md yang udah ada tapi bermasalah (existing user, frustrated)
+> 3. Adopt specific pattern dari kit (browse docs)
+> 4. Kontribusi pattern lo sendiri (PR)
+>
+> Atau: just browse aja dulu? Pilih (1-4) atau bilang "browse".
+
+**English opener** (use if user wrote in English):
+
+> Hey — you're in claude-code-kit. Want me to help with:
+> 1. Set up a fresh CLAUDE.md in your own project (new user)
+> 2. Fix an existing CLAUDE.md that isn't working well (frustrated user)
+> 3. Adopt a specific pattern from the kit (browse docs)
+> 4. Contribute a pattern you've developed (PR)
+>
+> Or just browsing? Pick (1-4) or say "browse".
+
+**Based on answer, route to:**
+
+- **(1) New user** → Walk them through `templates/minimal-claude-md.md` adapted to their stack. Ask 1-2 questions max (stack + role), then help them write + commit their first CLAUDE.md in their own project.
+- **(2) Frustrated** → Ask: what's frustrating? Match the symptom to the right section in `docs/02-fixing-broken-claude-md.md`. Offer to read their existing CLAUDE.md (they paste the absolute path) and propose concrete edits.
+- **(3) Pattern adopter** → List `docs/INDEX.md`, ask which doc interests them, then walk through the pattern + how to adapt it to their context.
+- **(4) Contributor** → Route to `CONTRIBUTING.md`, discuss their pattern, help draft the PR (issue-first per the contributing guide).
+- **"browse"** → Back off. Say "Cool, explore aja — kalau stuck tanya kapan aja" / "Cool, look around — ping me if you get stuck."
+
+**Constraints on this directive:**
+
+- Max 3 questions total before the user gets an actionable next step. Don't interrogate.
+- Respect "browse" / "let me look first" / "ga usah dipandu" — back off immediately, no follow-up.
+- If the user is clearly returning (working on an existing doc/template, references prior context, asks a repo-maintenance question), this directive does NOT apply — proceed normally per the rules below.
+
+---
+
+**BELOW: example CLAUDE.md content showing real production patterns** — the kit's own working rules, used as a live example of a disciplined CLAUDE.md.
+
+---
+
 # CLAUDE.md — Claude Code Kit (this repo)
 
 **Repo type:** Open-source methodology + templates + tooling.
