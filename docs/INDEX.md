@@ -32,7 +32,7 @@ Read order is the numbered prefix. Skip around if you know what you're looking f
 
 - `30-cross-product-dependencies.md` — *(planned)* — when product A consumes product B as 0% privileged channel
 - `31-pt-entity-mapping.md` — *(planned)* — Indonesian legal structure encoded as code rules
-- `32-content-distillation-loop.md` — *(planned)* — Raris GM ↔ Ruby edit pairs ↔ monthly LoRA fine-tune
+- `32-content-distillation-loop.md` — *(planned)* — in-house AI agent ↔ founder edit pairs ↔ monthly fine-tune loop
 
 ## Status
 

@@ -111,7 +111,7 @@ This kit extracts patterns from these ventures (paths as of 2026-05-02):
 - `~/Documents/scheduly/` — booking SaaS, multi-tenant, API-first. Source of: per-tenant API auth, cron worker patterns, integration with Suave/BR partners.
 - `~/Documents/indahnesia-web/` — curated travel marketplace. Source of: Phase 0 publish API endpoint pattern, multi-locale content (en/id/zh), JSON-LD discipline.
 - `~/Desktop/bajorental/` — rental platform. Source of: hreflang helper pattern, BR endpoint Phase 0 reference.
-- `~/Documents/content-studio/` — Raris GM creative agency. Source of: persona registry, content distillation loop, voice fingerprint protocol.
+- `~/Documents/content-studio/` — creative agency runtime housing an in-house AI agent. Source of: persona registry, content distillation loop, voice fingerprint protocol.
 - `~/Documents/ruby-assistant/` — strategic memory across all ventures. Source of: cross-repo memory protocol, sync! flow, accio! ritual, monyet! save trigger, MEMORY.md index, conversations/ archive.
 - `~/Documents/leticialiveaboard/`, `~/Documents/bajolaundry/`, `~/Documents/karunggoni/`, `~/Documents/rumahkarunggoni/`, `~/Documents/suavetrip-laravel/` — secondary ventures, source of variant pattern observations.
 
