@@ -4,6 +4,8 @@
 
 > The boring infrastructure part. The bit that doesn't make YouTube thumbnails but actually makes you money.
 
+> **Start here →** [docs/01-claude-md-rules.md](docs/01-claude-md-rules.md) — the actual CLAUDE.md ruleset (Indonesian primary, English summary at top) running across 8 production repositories. Begins from "what rules do you actually put in CLAUDE.md?"
+
 ## What this is
 
 Methodology + templates + tooling extracted from running 8+ active ventures under one holding (PT Adikarya Wisata Indah Nesia) with Claude Code as the primary development partner. SEA payment realities, Indonesian dev voice, cross-repo memory protocol, deploy verification gates.
@@ -53,7 +55,7 @@ claude-code-kit/
 └── .github/             ← reusable Actions workflows
 ```
 
-Status: **bootstrap stage.** Foundation laid 2026-05-02. Iterating in public.
+Status: **v0.0.1 bootstrap, evolving fast** — see [docs/INDEX.md](docs/INDEX.md) for shipped vs planned. Foundation laid 2026-05-02. Iterating in public.
 
 ## Quickstart (when ready)
 
@@ -78,4 +80,4 @@ MIT. Fork freely. Improve back if useful.
 
 ## Author
 
-Ruby Perkasa — solo founder, 8+ active ventures, Bandung + Labuan Bajo.
+Built by [@rubyperkasa](https://www.threads.net/@rubyperkasa) — founder, Indahnesia Holding. Bandung + Labuan Bajo.

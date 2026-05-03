@@ -5,7 +5,7 @@ Read order is the numbered prefix. Skip around if you know what you're looking f
 ## Methodology
 
 - [00-philosophy.md](00-philosophy.md) — why this kit exists, founder values, anti-thesis
-- `01-claude-md-pattern.md` — *(planned)* — the per-repo CLAUDE.md as protocol agreement
+- [01-claude-md-rules.md](01-claude-md-rules.md) — the actual CLAUDE.md ruleset running across 8 production repos (Indonesian primary)
 - `02-cross-repo-memory.md` — *(planned)* — sync! flow, RUBY_BRIEF producer/consumer, UTC-Z timestamp lock
 - `03-session-rituals.md` — *(planned)* — accio! / monyet! / catat itu / sync! / start triggers
 - `04-deploy-verification.md` — *(planned)* — 3-gate (tsc → build → curl) with real incident anatomy
@@ -35,7 +35,7 @@ Read order is the numbered prefix. Skip around if you know what you're looking f
 
 ## Status
 
-- ✅ Shipped: 00-philosophy.md, this INDEX.md, README.md, CLAUDE.md, LICENSE
+- ✅ Shipped: 00-philosophy.md, 01-claude-md-rules.md, this INDEX.md, README.md, CLAUDE.md, LICENSE
 - 🟡 Templates: bootstrap (CLAUDE.md.template, RUBY_BRIEF.md.template — coming next)
 - 🔴 All other docs: planned, not written
 
