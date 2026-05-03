@@ -29,7 +29,7 @@ Build for the pain you actually feel. Every pattern in this kit comes from a rea
 Examples (real incidents, paraphrased):
 - *Silent deploy failure* — type-check passed, build appeared green, but production never received the change because the build platform failed silently on lint-as-error in production mode. Prod served stale code for 24 hours. Spawned the 3-gate verification rule (tsc → build → curl).
 - *Article DB-orphan* — a published article was orphaned from the production database for 24h because we trusted "commit pushed" instead of curl-ing the live URL. The MD file was written, the commit was pushed, but the page rendered from DB not filesystem — so it 404'd. Spawned the SHIP VERIFICATION rule (verify content from the user-facing URL, not "deploy ran").
-- *Webhook subscription disappeared* — a webhook subscription disappeared between morning rehearsal pass and afternoon production traffic — observable only at the consumer side, not in upstream logs. Spawned cross-session forensic discipline (verify state at the boundary, not just at the source).
+- *Vanishing webhook subscription* — between morning verification (all green) and afternoon production traffic, an upstream subscription quietly de-registered itself. Observable only at the consumer side; upstream logs showed nothing. Spawned cross-session forensic discipline (verify state at the boundary, not just at the source).
 
 Every doc in this kit traces back to an incident. If a doc seems abstract, an incident is missing — file an issue.
 
