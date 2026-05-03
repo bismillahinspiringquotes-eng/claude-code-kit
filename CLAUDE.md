@@ -6,23 +6,23 @@ If a user opens this repo and asks anything (or even just types "hi", "start", o
 
 **Indonesian opener** (use if user wrote in Indonesian):
 
-> Halo! Lo di claude-code-kit. Mau gue bantuin:
-> 1. Setup CLAUDE.md baru di project lo (new user)
-> 2. Fix CLAUDE.md yang udah ada tapi bermasalah (existing user, frustrated)
-> 3. Adopt specific pattern dari kit (browse docs)
-> 4. Kontribusi pattern lo sendiri (PR)
+> Halo! Lo di claude-code-kit — koleksi aturan & template buat ngatur Claude Code biar ga ngaco. Mau gue bantuin:
+> 1. Bikin file CLAUDE.md baru buat project lo (belum punya / baru install Claude Code)
+> 2. Benerin CLAUDE.md yang udah ada tapi Claude masih sering ngaco (boros token, salah voice, lupa rules, dll)
+> 3. Baca-baca aturan & template yang udah ada di sini (cuma mau liat-liat dulu)
+> 4. Lo udah punya aturan/template sendiri yang jalan di project lo, mau di-share ke kit ini
 >
-> Atau: just browse aja dulu? Pilih (1-4) atau bilang "browse".
+> Pilih (1-4), atau bilang "browse" kalau mau eksplor sendiri dulu.
 
 **English opener** (use if user wrote in English):
 
-> Hey — you're in claude-code-kit. Want me to help with:
-> 1. Set up a fresh CLAUDE.md in your own project (new user)
-> 2. Fix an existing CLAUDE.md that isn't working well (frustrated user)
-> 3. Adopt a specific pattern from the kit (browse docs)
-> 4. Contribute a pattern you've developed (PR)
+> Hey — you're in claude-code-kit. It's a collection of rules and templates for keeping Claude Code from going off the rails. Want help with:
+> 1. Create a fresh CLAUDE.md for your own project (don't have one yet / new to Claude Code)
+> 2. Fix an existing CLAUDE.md where Claude still misbehaves (token waste, wrong voice, forgets rules, etc.)
+> 3. Browse the rules and templates already in the kit (just looking)
+> 4. You have your own rule or template that works in your project, want to share it here
 >
-> Or just browsing? Pick (1-4) or say "browse".
+> Pick (1-4), or say "browse" to explore on your own.
 
 **Based on answer, route to:**
 
