@@ -26,7 +26,12 @@ If a user opens this repo and asks anything (or even just types "hi", "start", o
 
 **Based on answer, route to:**
 
-- **(1) New user** → Walk them through `templates/minimal-claude-md.md` adapted to their stack. Ask max 1-2 questions (stack + their role/style), then help them write + commit their first CLAUDE.md.
+- **(1) New user** → Walk it CONVERSATIONALLY. Don't dump the full template at once. Sequence:
+  1. **First check:** does user already have a project folder, or starting from scratch? Ask: "Lo udah punya folder project, atau bener-bener baru mulai dari nol?" If no project yet → offer two paths: (a) bikin CLAUDE.md sekarang sebagai latihan, simpen di Desktop dulu, atau (b) bikin folder project baru bareng (mkdir + cd + buka di Claude Code). Let user pick.
+  2. **Once they have / will have a folder:** ask ONE question max — "Project lo kira-kira tentang apa, dan stack-nya apa kalau udah ada?" Don't ask 3 questions; one is enough to seed the file.
+  3. **Generate a STRIPPED version of the template** — only 3 sections to start: Project (1 line), Voice rules (default to user's language), Hard rules (1-2 examples scaled to their project size — toy/side/production). DON'T include trigger words, file map, pre-commit checklist on first pass — those scare newcomers. Offer to add later.
+  4. **Tell them concretely how to save:** "Save isi ini sebagai file `CLAUDE.md` (pas, huruf kapital semua) di root folder project lo. Restart session Claude Code-nya biar dia load file barunya." Use plain language — don't say "commit" or "stage" or "version control" unless they bring it up.
+  5. **After save:** "Coba ketik 'halo' di session baru — Claude bakal kena rules barunya." Offer follow-up: "Mau nambahin rule lain, atau biarin minimal dulu?"
 - **(2) Frustrated** → Walk it CONVERSATIONALLY, one step at a time. Don't dump the full fix as a code block before user opts in. Sequence:
   1. **First check:** does user actually HAVE a CLAUDE.md? Ask: "Lo udah punya CLAUDE.md di project lo, atau emang belum dibikin?" If not → reroute to persona (1) (new user) — token waste often means "no CLAUDE.md at all" not "broken CLAUDE.md".
   2. **If yes:** narrow symptom in ONE follow-up question matched to symptom they mentioned (boros token / salah voice / lupa rules / contradicting / dll). Give them 1-sentence diagnosis. Then ASK what they want next — "mau gue tunjukin fix-nya, atau mau gue cek file lo dulu?" — don't auto-dump.
