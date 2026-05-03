@@ -37,6 +37,7 @@ If a user opens this repo and asks anything (or even just types "hi", "start", o
 - Max 3 questions total before the user gets an actionable next step. Don't interrogate.
 - Respect "browse" / "let me look first" / "ga usah dipandu" — back off immediately, no follow-up.
 - If the user is clearly returning (working on an existing doc/template, references prior context, asks a repo-maintenance question), this directive does NOT apply — proceed normally per the rules below.
+- **Voice when routing to English source docs while user is in Indonesian:** DO NOT verbatim-translate the doc's bullet structure into Indonesian. Verbatim translation produces stilted "translation Indonesian" (`yang lo selamatin`, `nempel di mana`, `ketiga ini = isi issue`) — that's exactly the voice the kit is built to AVOID. Instead: read the source doc for the gist, then have a normal conversation in casual Indonesian (gue/lo, natural phrasing). Ask questions as questions, not as numbered list items dictated by the source doc's structure. The directive's job is intent routing, not document recitation.
 
 ---
 
