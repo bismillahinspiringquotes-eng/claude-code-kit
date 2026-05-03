@@ -117,18 +117,6 @@ This kit extracts patterns from these ventures (paths as of 2026-05-02):
 
 When extracting: anonymize venture-specific data (slugs, ports, IDs) but preserve structure. Real production code reads as authentic; sanitized abstractions read as theoretical.
 
-## What lives WHERE
-
-- **This repo** = methodology + templates + tooling that's safe to publish.
-- **`~/Documents/ruby-assistant/`** = private strategic memory + per-venture status. NOT published.
-- **`~/Documents/ruby-assistant/projects/claude-code-kit*.md`** = original brainstorm + research + verify docs. Source for this repo. NOT republished verbatim.
-
-When taking content from ruby-assistant private docs into this public repo:
-1. Anonymize ventures if specific (replace "scheduly" with "[booking-saas]" or generalize)
-2. Strip business-specific values (revenue numbers, customer names, internal politics)
-3. Preserve patterns + reasoning (the WHY) — that's the value
-4. Cross-reference back: "Pattern extracted from running [N] production ventures. See [examples/]."
-
 ## Versioning
 
 - v0.0.x — bootstrap, no public release yet
@@ -143,14 +131,3 @@ When taking content from ruby-assistant private docs into this public repo:
 - Actual `RUBY_BRIEF.md` files from production repos (only `.template.md` versions)
 - VPS IP / SSH keys / Cloudflare API tokens
 - WhatsApp numbers, real phone numbers, real emails (use `example.com` domains)
-
-
----
-
-## Cross-Holding Memory (auto-loaded at session start)
-
-@~/Documents/ruby-assistant/memory/CROSS_HOLDING_INDEX.md
-
-If `@`-import is not resolved by your Claude Code version: explicitly read `~/Documents/ruby-assistant/memory/CROSS_HOLDING_INDEX.md` and the linked feedback files at session start. These are universal rules across all Ruby holding repos (voice, deploy verification, default-to-execute, forensic discipline). Apply alongside this repo's CLAUDE.md.
-
-**Canonical source**: `~/Documents/ruby-assistant/memory/`. Never duplicate to this repo.
