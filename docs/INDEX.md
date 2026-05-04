@@ -1,5 +1,7 @@
 # Docs Index
 
+What's actually shipped right now. For planned/upcoming items see [ROADMAP.md](../ROADMAP.md).
+
 Read order is the numbered prefix. Skip around if you know what you're looking for.
 
 ## Methodology
@@ -10,45 +12,25 @@ Read order is the numbered prefix. Skip around if you know what you're looking f
 
 ## Skills
 
-- [../skills/INDEX.md](../skills/INDEX.md) — reusable Claude Code skills (security audits, SEO audits, pre-deploy verification, secret rotation, voice register check)
-- `02-cross-repo-memory.md` — *(planned)* — sync! flow, RUBY_BRIEF producer/consumer, UTC-Z timestamp lock
-- `03-session-rituals.md` — *(planned)* — accio! / monyet! / catat itu / sync! / start triggers
-- `04-deploy-verification.md` — *(planned)* — 3-gate (tsc → build → curl) with real incident anatomy
-- `05-default-to-execute.md` — *(planned)* — Claude executes, doesn't delegate; the silence-unless-asked rule
+- [../skills/INDEX.md](../skills/INDEX.md) — reusable Claude Code skills (security audits ×2, SEO audits ×2, pre-deploy verification, secret rotation, voice register check)
 
-## Patterns
+## Templates
 
-- `10-phase-ordering.md` — *(planned)* — scaffold → schema/RLS → auth → UI → features → SEO → admin → DNS → polish
-- `11-recon-first.md` — *(planned)* — read before code, lock spec in decisions/*.md
-- `12-multi-tenant-rls.md` — *(planned)* — Supabase RLS discipline + restore drill
-- `13-per-operator-payments.md` — *(planned)* — Xendit per-operator vs marketplace-fee Stripe (SEA reality)
-- `14-bahasa-first-voice.md` — *(planned)* — gue/lo with founder, aku/kamu with users; register modes
-
-## Runbooks (ops)
-
-- `20-secret-rotation.md` — *(planned)* — Supabase API key rotation, Vercel env sync, VPS cron worker restart
-- `21-supabase-backup.md` — *(planned)* — pg-r2-backup + restore drill
-- `22-error-monitoring.md` — *(planned)* — Sentry SDK + BetterStack DSN
-- `23-cost-monitoring.md` — *(planned)* — Supabase Management API + Vercel API → Discord alert
-- `24-dns-migration.md` — *(planned)* — registrar move, nameserver swap, no downtime
-
-## Holding-company patterns (advanced)
-
-- `30-cross-product-dependencies.md` — *(planned)* — when product A consumes product B as 0% privileged channel
-- `31-pt-entity-mapping.md` — *(planned)* — Indonesian legal structure encoded as code rules
-- `32-content-distillation-loop.md` — *(planned)* — in-house AI agent ↔ founder edit pairs ↔ monthly fine-tune loop
+- [../templates/CLAUDE.md.template](../templates/CLAUDE.md.template) — full reference CLAUDE.md skeleton
+- [../templates/minimal-claude-md.md](../templates/minimal-claude-md.md) — newcomer-friendly minimal CLAUDE.md (3 required sections, optional sections marked)
+- [../templates/RUBY_BRIEF.md.template](../templates/RUBY_BRIEF.md.template) — cross-repo state brief (producer side)
 
 ## Status
 
-- ✅ Shipped: 00-philosophy.md, 01-claude-md-rules.md, 02-fixing-broken-claude-md.md, this INDEX.md, README.md, CLAUDE.md, CONTRIBUTING.md, LICENSE
-- ✅ Skills shipped: 7 (security ×2, SEO ×2, production discipline ×2, voice ×1) — see [../skills/INDEX.md](../skills/INDEX.md)
-- 🟡 Templates: bootstrap (CLAUDE.md.template, RUBY_BRIEF.md.template, minimal-claude-md.md)
-- 🔴 All other docs: planned, not written
+- ✅ Methodology docs: 3 shipped
+- ✅ Skills: 7 shipped
+- ✅ Templates: 3 shipped (bootstrap)
+- See [ROADMAP.md](../ROADMAP.md) for planned docs
 
-This is a **bootstrap-stage repo.** Foundation laid 2026-05-02. Iterating in public.
+This is a **v0.0.1 bootstrap-stage repo.** Foundation laid 2026-05-02. Iterating in public.
 
 ## How to contribute
 
-Issues + PRs welcome once v0.1.0 ships. For now, fork freely.
+See [../CONTRIBUTING.md](../CONTRIBUTING.md). PRs welcome.
 
 If you want to surface a pattern from your own ventures: open a discussion (when GitHub Discussions are enabled) or just fork and adapt.
