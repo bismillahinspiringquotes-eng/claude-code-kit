@@ -12,6 +12,8 @@
 
 **Claude misbehaves in your existing repo?** [docs/02-fixing-broken-claude-md.md](docs/02-fixing-broken-claude-md.md) — 6 common failure modes + fixes.
 
+**Want production-discipline skills?** See [skills/INDEX.md](skills/INDEX.md) — 7 reusable Claude Code skills (security audits, SEO audits, pre-deploy 3-gate verification, secret rotation walkthrough, voice register check).
+
 **Want to contribute?** See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## What this is

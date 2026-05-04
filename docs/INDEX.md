@@ -7,6 +7,10 @@ Read order is the numbered prefix. Skip around if you know what you're looking f
 - [00-philosophy.md](00-philosophy.md) — why this kit exists, founder values, anti-thesis
 - [01-claude-md-rules.md](01-claude-md-rules.md) — the actual CLAUDE.md ruleset running across 8 production repos (Indonesian primary)
 - [02-fixing-broken-claude-md.md](02-fixing-broken-claude-md.md) — diagnostic for when Claude misbehaves: 6 common failure modes + specific fixes
+
+## Skills
+
+- [../skills/INDEX.md](../skills/INDEX.md) — reusable Claude Code skills (security audits, SEO audits, pre-deploy verification, secret rotation, voice register check)
 - `02-cross-repo-memory.md` — *(planned)* — sync! flow, RUBY_BRIEF producer/consumer, UTC-Z timestamp lock
 - `03-session-rituals.md` — *(planned)* — accio! / monyet! / catat itu / sync! / start triggers
 - `04-deploy-verification.md` — *(planned)* — 3-gate (tsc → build → curl) with real incident anatomy
@@ -37,6 +41,7 @@ Read order is the numbered prefix. Skip around if you know what you're looking f
 ## Status
 
 - ✅ Shipped: 00-philosophy.md, 01-claude-md-rules.md, 02-fixing-broken-claude-md.md, this INDEX.md, README.md, CLAUDE.md, CONTRIBUTING.md, LICENSE
+- ✅ Skills shipped: 7 (security ×2, SEO ×2, production discipline ×2, voice ×1) — see [../skills/INDEX.md](../skills/INDEX.md)
 - 🟡 Templates: bootstrap (CLAUDE.md.template, RUBY_BRIEF.md.template, minimal-claude-md.md)
 - 🔴 All other docs: planned, not written
 
