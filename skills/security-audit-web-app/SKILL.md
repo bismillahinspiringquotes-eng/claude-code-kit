@@ -1,11 +1,11 @@
 ---
 name: security-audit-web-app
-description: Use when auditing a web app frontend/edge layer for common security mistakes — server vs client boundary leaks, environment variables exposed to the browser, missing security headers, unsafe redirects, dangerous HTML rendering, middleware that can be bypassed. Examples use Next.js + Vercel, but checks apply to any modern web framework (Remix, SvelteKit, Astro, Laravel, Rails).
+description: Use when auditing a web app frontend/edge layer for common security mistakes — server vs client boundary leaks, environment variables exposed to the browser, missing security headers, unsafe redirects, dangerous HTML rendering, middleware that can be bypassed. Examples use Next.js, but checks apply to any modern web framework (Remix, SvelteKit, Astro, Laravel, Rails).
 ---
 
 # Security audit — web app layer
 
-You're auditing a web app's frontend/edge for the 6 most common web security mistakes that lead to real incidents. Examples use Next.js + Vercel because that's the kit's recommended stack. The same concepts apply to any modern framework — only the function names change.
+You're auditing a web app's frontend/edge for the 6 most common web security mistakes that lead to real incidents. Examples use Next.js. The same concepts apply to any modern framework — only the function names change.
 
 ## The 6 checks
 
@@ -34,7 +34,7 @@ You're auditing a web app's frontend/edge for the 6 most common web security mis
 
 **What to check:**
 - For Next.js: read `next.config.mjs`/`next.config.js`. Look for `headers()` function returning security headers.
-- For Vercel: check `vercel.json` headers config.
+- For a reverse proxy / CDN (Nginx, Caddy, Traefik, your CDN rules): check headers set there too, they can override the app.
 - For other frameworks: equivalent middleware/config file.
 - Required headers: `Content-Security-Policy` (no `unsafe-eval` in production), `X-Frame-Options: DENY` or `SAMEORIGIN`, `X-Content-Type-Options: nosniff`, `Referrer-Policy`, `Strict-Transport-Security` for HTTPS.
 - Bonus: `poweredByHeader: false` for Next.js (don't advertise framework version).

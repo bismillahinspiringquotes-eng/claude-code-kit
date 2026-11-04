@@ -14,7 +14,7 @@ Gate 3: curl the live URL → response body matches expected content
 
 "Shipped" = Gate 3 passes. Not "MD written", not "commit pushed", not "deploy ran". The user-facing URL serves the content you intended.
 
-This is a methodology doc. The operationalized check is in [`skills/pre-deploy-3gate.md`](../skills/pre-deploy-3gate.md).
+This is a methodology doc. The operationalized check is in [`skills/pre-deploy-3gate/SKILL.md`](../skills/pre-deploy-3gate/SKILL.md).
 
 ## Why three gates (not one or two)
 
@@ -92,6 +92,6 @@ The longer "later" is delayed, the more silent failures accumulate. Wire it now.
 
 ## Related
 
-- [`skills/pre-deploy-3gate.md`](../skills/pre-deploy-3gate.md) — operationalized skill (run this before claiming shipped)
+- [`skills/pre-deploy-3gate/SKILL.md`](../skills/pre-deploy-3gate/SKILL.md) — operationalized skill (run this before claiming shipped)
 - [`01-claude-md-rules.md`](01-claude-md-rules.md) — SHIP VERIFICATION RULE (rule #8)
 - [`02-fixing-broken-claude-md.md`](02-fixing-broken-claude-md.md) — fixing CLAUDE.md that doesn't enforce ship verification

@@ -1,93 +1,104 @@
 # Claude Code Kit
 
-**Opinionated methodology for solo founders shipping multiple ventures with Claude Code.**
+Aturan, template, dan skill supaya Claude Code kerja rapi: nggak nebak, nggak ngarang, nggak boros, dan nggak nulis kayak robot. Diambil dari pemakaian harian di beberapa usaha yang berjalan, bukan teori.
 
-> The boring infrastructure part. The bit that doesn't make YouTube thumbnails but actually makes you money.
+*English summary at the bottom.*
 
-## Start here
+## Mulai dari sini (pemula)
 
-**First time?** Open this repo in Claude Code (`cd claude-code-kit && claude`) and just say "halo" or "hi" — Claude will detect your situation and route you to the right next step. The kit teaches Claude Code patterns by USING them.
+Belum pernah pakai Claude Code, atau sudah pakai tapi Claude sering ngaco? Ikuti langkah ini. Semua perintah lo jalankan sendiri di Terminal, bukan disuruh ke Claude.
 
-**Just want to read?** Start with [docs/01-claude-md-rules.md](docs/01-claude-md-rules.md) — the actual CLAUDE.md ruleset running across 8 production repositories. Begins from "what rules do you actually put in CLAUDE.md?"
+**0. Ambil repo ini.**
 
-**Claude misbehaves in your existing repo?** [docs/02-fixing-broken-claude-md.md](docs/02-fixing-broken-claude-md.md) — 6 common failure modes + fixes.
+```
+git clone https://github.com/bismillahinspiringquotes-eng/claude-code-kit.git
+cd claude-code-kit
+```
 
-**Want production-discipline skills?** See [skills/INDEX.md](skills/INDEX.md) — 7 reusable Claude Code skills (security audits, SEO audits, pre-deploy 3-gate verification, secret rotation walkthrough, voice register check).
+Nggak punya git? Klik tombol hijau **Code → Download ZIP** di halaman GitHub, ekstrak, lalu buka Terminal di folder hasil ekstraknya.
 
-**Want to contribute?** See [CONTRIBUTING.md](CONTRIBUTING.md).
+**1. Pasang empat skill dasar.** Jalankan dari dalam folder `claude-code-kit`:
 
-## What this is
+```
+mkdir -p ~/.claude/skills
+cp -r skills/anti-ai-slop skills/pakai-alat-dulu skills/bukti-sebelum-klaim skills/tanya-seperlunya ~/.claude/skills/
+```
 
-Methodology + templates + tooling extracted from running 8+ active ventures under one holding (PT Adikarya Wisata Indah Nesia) with Claude Code as the primary development partner. SEA payment realities, Indonesian dev voice, cross-repo memory protocol, deploy verification gates.
+Perintah ini cuma menyalin empat folder berisi teks. Mau lihat isinya dulu? Buka `skills/<nama>/SKILL.md`, isinya instruksi biasa, tanpa kode yang dijalankan.
 
-Not a Next.js starter. Not a "1 prompt jadi miliarder" guide. The plumbing that millionaire-AI podcasts skip.
+Isinya:
+- **anti-ai-slop** — Claude membuang pola tulisan khas AI sebelum mengirim teks ke orang.
+- **pakai-alat-dulu** — Claude mengecek repo, skrip, dan data yang sudah ada sebelum nebak atau nyuruh lo.
+- **bukti-sebelum-klaim** — Claude nggak bilang "selesai" tanpa bukti yang bisa dicek.
+- **tanya-seperlunya** — Claude berhenti nanya hal yang sudah lo izinkan atau bisa dia cek sendiri.
 
-## What this isn't
+**2. Bikin `CLAUDE.md` untuk proyek lo.**
+Salin [templates/minimal-claude-md.md](templates/minimal-claude-md.md) ke folder proyek lo, beri nama `CLAUDE.md` (huruf besar semua). Isi tiga bagian wajibnya: proyeknya apa, gaya bicara, dan 1–3 aturan yang nggak boleh dilanggar. Bagian lain hapus dulu.
 
-- A toy demo or hello-world
-- "Use Claude Code to vibe-code your way to riches"
-- Yet another Next.js + Supabase boilerplate (it sits *above* boilerplates, starter-agnostic)
-- A complete framework — it's opinionated patterns + working templates, not a black box
+**3. Buka sesi baru dan coba.**
+Masuk ke folder proyek lo, jalankan `claude`, ketik `/skills`. Empat nama tadi harus muncul. Setelah itu kerja seperti biasa.
 
-## Why exist
+**Kenapa nggak minta Claude yang pasang?** Claude Code waspada terhadap repo dari internet yang menyuruhnya menulis ke folder pengaturannya sendiri, dan itu sikap yang benar. Jadi pemasangan dilakukan lo sendiri dengan satu perintah salin yang isinya bisa lo baca.
 
-Watched 20+ AI-millionaire podcasts. Pattern: every "one-person billion dollar company" story skips the 3 months of unsexy infrastructure setup before the AI-driven revenue showed up. That infrastructure is the actual moat.
+## Kalau Claude masih ngaco
 
-This kit extracts that infrastructure layer:
-- CLAUDE.md per-repo discipline
-- Cross-session memory (RUBY_BRIEF + sync! protocol, UTC-Z timestamp lock)
-- Deploy verification gates (3-gate: tsc → build → curl)
-- SEA payment patterns (per-operator Xendit, NOT marketplace-fee Stripe)
-- Indonesian-first dev voice rules (gue/lo with founder, aku/kamu with end users)
-- Holding-company semantics (1 founder / N companies / 1 PT)
+| Gejala | Baca |
+|---|---|
+| Boros kata, basa-basi, mengulang rencana | [docs/02-fixing-broken-claude-md.md](docs/02-fixing-broken-claude-md.md) §1 |
+| Tulisannya berbau AI | skill [anti-ai-slop](skills/anti-ai-slop/SKILL.md) |
+| Nyuruh lo menjalankan perintah yang bisa dia jalankan sendiri | [docs/05-default-to-execute.md](docs/05-default-to-execute.md) + skill [pakai-alat-dulu](skills/pakai-alat-dulu/SKILL.md) |
+| Bilang "sudah beres" padahal belum | [docs/04-deploy-verification.md](docs/04-deploy-verification.md) + skill [bukti-sebelum-klaim](skills/bukti-sebelum-klaim/SKILL.md) |
+| Kebanyakan nanya | skill [tanya-seperlunya](skills/tanya-seperlunya/SKILL.md) |
+| Bikin fitur baru padahal sudah ada yang mirip | [docs/06-audit-existing-before-build.md](docs/06-audit-existing-before-build.md) |
+| Menjalankan perintah yang merusak berkas | [docs/07-destructive-action-discipline.md](docs/07-destructive-action-discipline.md) |
+| Aturan di `CLAUDE.md` diabaikan | [docs/02-fixing-broken-claude-md.md](docs/02-fixing-broken-claude-md.md) |
 
-## Honest positioning
-
-This is not "the only way" or "uncontested." Cross-repo memory has prior art (Owen Zanzal's Virtual Monorepo Pattern, claude-mem 46k+ stars, WORKSPACE.md patterns). Founder-rules-as-code is a crowded genre.
-
-What's specific to this kit:
-
-> The only public methodology that integrates cross-repo memory + SEA operational reality + holding-company semantics + Bahasa-first founder voice into one Claude Code system.
-
-Composite + execution discipline + first-mover in Indonesian dev community.
-
-## What's inside (current state)
+## Isi repo
 
 ```
 claude-code-kit/
-├── README.md            ← you are here
-├── CLAUDE.md            ← rules when working IN this repo
-├── LICENSE              ← MIT
-├── docs/                ← methodology docs (philosophy → patterns → runbooks)
-├── templates/           ← fork-and-fill templates (CLAUDE.md, RUBY_BRIEF.md, sync flow)
-├── examples/            ← real anonymized examples from production ventures
-├── tools/               ← differentiator tools (sync script, supabase guardrails, cost watch)
-└── .github/             ← reusable Actions workflows
+├── README.md       ← halaman ini
+├── CLAUDE.md       ← aturan Claude saat merawat repo ini
+├── docs/           ← alasan di balik tiap aturan, dengan kejadian nyatanya
+├── skills/         ← skill siap pasang (satu folder = satu skill)
+└── templates/      ← template CLAUDE.md (minimal dan lengkap)
 ```
 
-Status: **v0.0.1 bootstrap, evolving fast** — see [docs/INDEX.md](docs/INDEX.md) for shipped vs planned. Foundation laid 2026-05-02. Iterating in public.
+Daftar lengkap: [docs/INDEX.md](docs/INDEX.md) dan [skills/README.md](skills/README.md). Rencana tulisan berikutnya: [ROADMAP.md](ROADMAP.md).
 
-## Quickstart (when ready)
+## Prinsip
 
-Coming. First version target: docs/00-philosophy.md → docs/01-claude-md-pattern.md → templates/CLAUDE.md.example.
+- **Tiap aturan lahir dari kejadian nyata.** Kalau aturannya terasa abstrak, cerita kejadiannya hilang. Bilang saja.
+- **Alat milik sendiri dulu.** Rekomendasi default bisa dipasang di server sendiri dan tidak mengunci lo ke satu vendor.
+- **Bahasa Indonesia apa adanya.** Gaya bicara dengan pemilik proyek (gue/lo) beda dengan gaya bicara ke pengguna (aku/kamu). Dua-duanya dikunci di `CLAUDE.md`.
 
-## Who this is for
+Kit ini bukan yang pertama untuk tiap bagiannya. Memori lintas repo, misalnya, sudah dikerjakan proyek lain (claude-mem, Virtual Monorepo Pattern dari Owen Zanzal). Yang khas di sini gabungannya: disiplin kerja, kenyataan bisnis di Indonesia, dan suara berbahasa Indonesia.
 
-- Solo founders running multiple SaaS / ventures who need to keep state coherent across repos
-- Indonesian/SEA developers wanting a localized methodology baseline
-- Engineers tired of "yet another Next.js starter" content who want the orchestration layer above
-- Non-engineers who learned vibe-coding but hit the wall when shipping production reality
+## Lisensi
 
-## Who this is NOT for
+MIT. Silakan pakai, ubah, dan bagikan.
 
-- People wanting AI to do everything autonomously (this requires founder discipline)
-- Solo-product-only founders (cross-repo patterns are overhead for 1 repo)
-- Teams (this is built for one human's cognitive load — team variants exist elsewhere)
+## Pembuat
 
-## License
+Ruby Perkasa — pendiri beberapa usaha perjalanan dan software di Bandung dan Labuan Bajo. Masukan lewat GitHub repo ini.
 
-MIT. Fork freely. Improve back if useful.
+---
 
-## Author
+## English summary
 
-Built by [@rubyperkasa](https://www.threads.net/@rubyperkasa) — founder, Indahnesia Holding. Bandung + Labuan Bajo.
+Rules, templates, and ready-to-install Claude Code skills that stop Claude from guessing, inventing, over-talking, and writing like a robot. Extracted from daily use across several running businesses.
+
+**Quickstart:** clone this repo, then from inside it install the four basic skills yourself (plain-text files, no code runs), and copy `templates/minimal-claude-md.md` into your project as `CLAUDE.md`:
+
+```
+git clone https://github.com/bismillahinspiringquotes-eng/claude-code-kit.git && cd claude-code-kit
+mkdir -p ~/.claude/skills
+cp -r skills/anti-ai-slop skills/pakai-alat-dulu skills/bukti-sebelum-klaim skills/tanya-seperlunya ~/.claude/skills/
+```
+
+- `anti-ai-slop` — strips AI-writing patterns before sending human-read text
+- `pakai-alat-dulu` ("use your tools first") — check existing repo, scripts, data before guessing or delegating to the user
+- `bukti-sebelum-klaim` ("evidence before claims") — separate built / merged / live / used; test measuring tools against known cases
+- `tanya-seperlunya` ("ask only when needed") — don't ask what's already authorized or measurable; questions need a reason code + evidence
+
+Skill bodies are in Indonesian; Claude reads them fine in any language. Docs in `docs/` are mostly English.

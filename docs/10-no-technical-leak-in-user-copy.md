@@ -83,5 +83,5 @@ Internal tools, console logs, Sentry, health-check endpoints, internal admin deb
 ## Related
 
 - [`09-no-domain-jargon-user-facing.md`](09-no-domain-jargon-user-facing.md) — sibling rule
-- [`skills/voice-register-check.md`](../skills/voice-register-check.md) — operationalized scan for both leak classes
+- [`skills/voice-register-check/SKILL.md`](../skills/voice-register-check/SKILL.md) — operationalized scan for both leak classes
 - [`14-bahasa-first-voice.md`](14-bahasa-first-voice.md) — voice register modes overall

@@ -94,5 +94,5 @@ Apply when adding ANY new user-facing surface (not just at launch):
 ## Related
 
 - [`10-no-technical-leak-in-user-copy.md`](10-no-technical-leak-in-user-copy.md) — sibling rule covering system-state leaks
-- [`skills/voice-register-check.md`](../skills/voice-register-check.md) — operationalized scan for both rules
+- [`skills/voice-register-check/SKILL.md`](../skills/voice-register-check/SKILL.md) — operationalized scan for both rules
 - [`14-bahasa-first-voice.md`](14-bahasa-first-voice.md) — voice register modes (founder ↔ user)

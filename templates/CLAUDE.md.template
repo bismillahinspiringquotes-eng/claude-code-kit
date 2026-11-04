@@ -33,8 +33,8 @@
 |---|---|---|
 | Frontend | [Next.js / Astro / Remix / etc] | [version, app router?, etc] |
 | Database | [Supabase / Postgres / etc] | [RLS-enforced? service role usage?] |
-| Hosting | [Vercel / Cloudflare / VPS] | |
-| Payments | [Xendit / Stripe / etc] | [per-operator? marketplace-fee?] |
+| Hosting | [VPS + Docker / Dokploy / Coolify / etc] | |
+| Payments | [DOKU / Midtrans / Stripe / etc] | [per-operator? marketplace-fee?] |
 | Email | [Resend / Postmark / etc] | |
 | Monitoring | [Sentry / BetterStack / GlitchTip] | |
 
@@ -79,7 +79,7 @@
 - **`start`** → read CLAUDE.md (this file) + SESSION.md + brief status format
 - **`accio!`** → save+commit ritual: update SESSION.md, update RUBY_BRIEF.md, version bump, single commit
 - **`monyet!`** → mid-session save signal for strategic decisions
-- **`sync!`** → cross-repo state pull (consumer-side, see ~/Documents/ruby-assistant/CLAUDE.md sync! protocol)
+- **`sync!`** → cross-repo state pull (consumer-side: your central strategy/memory folder reads every repo brief)
 
 ### Session start checklist
 1. Read CLAUDE.md (this file)
@@ -118,6 +118,6 @@ v[X.Y.Z] — [last meaningful update date + 1-line summary]
 2. Replace every `[PLACEHOLDER]` with project-specific content.
 3. Delete sections you don't need (most projects don't need all sections).
 4. Add sections specific to your domain (e.g. for a content site, add "Editorial voice rules").
-5. Keep updating it. Stale CLAUDE.md = production incidents (see `examples/article-5-db-orphan.md` for a real case).
+5. Keep updating it. Stale CLAUDE.md = production incidents (see the article-orphan story in `docs/04-deploy-verification.md`).
 
 This template extracted from running 8+ active ventures. See parent `claude-code-kit` repo for context.

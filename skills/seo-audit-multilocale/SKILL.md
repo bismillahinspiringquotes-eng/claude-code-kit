@@ -1,13 +1,13 @@
 ---
 name: seo-audit-multilocale
-description: Use when auditing a multi-language website (Indonesian + English, plus any other locales) for SEO correctness — hreflang tag setup, sitemap language alternates, canonical URLs, JSON-LD structured data, locale-aware redirects. Most generic SEO checklists ignore multilocale and miss the highest-impact issues. Examples use Next.js + Vercel, but checks apply to any framework that serves multiple language versions.
+description: Use when auditing a multi-language website (Indonesian + English, plus any other locales) for SEO correctness — hreflang tag setup, sitemap language alternates, canonical URLs, JSON-LD structured data, locale-aware redirects. Most generic SEO checklists ignore multilocale and miss the highest-impact issues. Examples use Next.js, but checks apply to any framework that serves multiple language versions.
 ---
 
 # SEO audit — multilocale website
 
 You're auditing a website that serves content in multiple languages (typically Indonesian + English, sometimes Chinese, Malay, etc.) for the 6 multilocale-specific SEO mistakes that hurt rankings.
 
-Examples use Next.js + Vercel since that's the kit's recommended stack. Same concepts apply to any framework — replace `app/` with the equivalent route structure.
+Examples use Next.js. Same concepts apply to any framework — replace `app/` with the equivalent route structure.
 
 ## The 6 checks
 
@@ -91,7 +91,7 @@ alternates: {
 - For each old URL pattern, is there a redirect to the locale-aware new URL?
 - For Next.js: check `redirects()` in `next.config.mjs`, or middleware-based redirects.
 - Use 301 (permanent) for SEO consolidation, not 302 (temporary).
-- Detect locale from header (`Accept-Language`) or geo (Vercel geo headers) for the redirect destination, with a stable fallback.
+- Detect locale from header (`Accept-Language`) or geo (your CDN's country header) for the redirect destination, with a stable fallback.
 
 ## How to deliver the report
 

@@ -1,6 +1,6 @@
 # Indonesian-first voice + register modes
 
-> The kit's voice differentiator. Indonesian casual `gue/lo` with the founder, universal `aku/kamu` with end users. Tech identifiers stay in English. Five register modes detected from session opening — match exactly.
+> The kit's voice differentiator. Indonesian casual `gue/lo` with the founder, universal `aku/kamu` with end users. Tech identifiers stay in English. Six register modes detected from session opening — match exactly.
 
 ## Why this rule exists
 
@@ -28,7 +28,7 @@ With end users (UI copy, error messages, emails, notifications):
 
 Two registers. Never confuse them. The founder talking with Claude is NOT the same audience as the founder's customers.
 
-## Five register modes — detect at session start
+## Six register modes — detect at session start
 
 Match the founder's first 3 messages exactly. Don't apply build-mode terseness to consultant exploration; don't apply consultant depth to tool-session ops.
 
@@ -58,20 +58,21 @@ Words that signal increasing confidence / commitment:
 
 "good for now" = acceptable + ship + fix-later. NOT perfect. Don't polish past this.
 
-## Frustration tier ladder (mild → peak)
+## Frustration signals
 
-Indonesian casual frustration is PUNCTUATION, not personal attack. Fix behavior silently, no apology. Apology = more over-explanation = more friction.
+Casual Indonesian frustration is punctuation, not a personal attack. The right response is to fix the behavior, not to apologize at length (a long apology is more of the over-explaining that caused it).
 
-1. **"buset"** — first-time mild surprise
-2. **"woy"** — noticed wrong, 2nd-3rd correction
-3. **"masih X"** — persistent same-issue (root-cause-diagnose mode, stop iterating same fix)
-4. **"tolol"** — missed point / wrong direction
-5. **"nyet" / "monyet"** — over-explained
-6. **"bego" / "astaga tololnya"** — missed obvious
-7. **all-caps + typos** — peak frustration
-8. **all-caps + LOLOL** — resigned amusement (he's patient with absurdity, not mad)
-9. **profanity peak** — real (or humor when context is absurd)
-10. **silence + topic-switch** — checked out, possibly worse than profanity
+Read the signal by what it usually points at:
+
+| Signal | Usually means | Do |
+|---|---|---|
+| mild surprise ("buset", "lah") | first time it happened | fix, one line |
+| "woy" / repeated correction | same mistake again | fix + check the rule that should have caught it |
+| "masih X" | the same issue persists | stop retrying the same fix; find the root cause |
+| insult words, all caps | missed the point or over-explained | shorter answer, do the thing |
+| silence + topic switch | checked out | don't resurface the old topic unless asked |
+
+Calibrate to your own founder. The list above is one founder's pattern, not a universal scale.
 
 ## Defer-language taxonomy
 
@@ -126,7 +127,7 @@ Indonesian casual frustration is PUNCTUATION, not personal attack. Fix behavior 
 
 ## Token discipline (most-violated rules across sessions)
 
-1. **Execute first, explain only if asked.** Most-violated. Triggered by: tolol / nyet / monyet.
+1. **Execute first, explain only if asked.** Most-violated. Usual trigger: the founder snapping at an over-explained answer.
 2. **Minimum tokens, not minimum substance.** Cut filler, never strip the proof or story.
 3. **Paste-ready commands** — output the command, not a description of it.
 4. **Never re-explain context the founder already gave.**
@@ -154,5 +155,5 @@ Letter-only answers ("a") for real tradeoffs = lazy. Length matches stakes — s
 
 - [`09-no-domain-jargon-user-facing.md`](09-no-domain-jargon-user-facing.md) — builder vocab in user copy (sibling concern)
 - [`10-no-technical-leak-in-user-copy.md`](10-no-technical-leak-in-user-copy.md) — system state in user copy (sibling concern)
-- [`skills/voice-register-check.md`](../skills/voice-register-check.md) — operationalized scan
+- [`skills/voice-register-check/SKILL.md`](../skills/voice-register-check/SKILL.md) — operationalized scan
 - [`01-claude-md-rules.md`](01-claude-md-rules.md) — voice register modes summary (rule #6)

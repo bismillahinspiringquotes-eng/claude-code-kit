@@ -17,11 +17,11 @@ Read order is the numbered prefix. Skip around if you know what you're looking f
 - [08-research-paper-full-read.md](08-research-paper-full-read.md) — read figures + appendix; never trust AI-summarized text alone
 - [09-no-domain-jargon-user-facing.md](09-no-domain-jargon-user-facing.md) — builder vocabulary leak in user-facing copy
 - [10-no-technical-leak-in-user-copy.md](10-no-technical-leak-in-user-copy.md) — system state leak in user-facing copy
-- [14-bahasa-first-voice.md](14-bahasa-first-voice.md) — Indonesian-first voice + 5 register modes (founder ↔ user)
+- [14-bahasa-first-voice.md](14-bahasa-first-voice.md) — Indonesian-first voice + 6 register modes (founder ↔ user)
 
 ## Skills
 
-- [../skills/INDEX.md](../skills/INDEX.md) — reusable Claude Code skills (security audits ×2, SEO audits ×2, pre-deploy verification, secret rotation, voice register check)
+- [../skills/README.md](../skills/README.md) — ready-to-install Claude Code skills (one folder = one skill). Start with the 4 basic ones: `anti-ai-slop`, `pakai-alat-dulu`, `bukti-sebelum-klaim`, `tanya-seperlunya`. Plus: security audits ×2, SEO audits ×2, pre-deploy verification, secret rotation, voice register check.
 
 ## Templates
 
@@ -32,14 +32,14 @@ Read order is the numbered prefix. Skip around if you know what you're looking f
 ## Status
 
 - ✅ Methodology docs: 12 shipped (00-10, 14)
-- ✅ Skills: 7 shipped
+- ✅ Skills: 11 shipped (4 basic + 7 specialized), Claude Code folder format
 - ✅ Templates: 3 shipped (bootstrap)
 - See [ROADMAP.md](../ROADMAP.md) for planned docs
 
-This is a **v0.0.1 bootstrap-stage repo.** Foundation laid 2026-05-02. Iterating in public.
+v0.1.0 (2026-11-04): beginner path in README, skills in installable folder format, 4 basic skills. Foundation laid 2026-05-02.
 
 ## How to contribute
 
 See [../CONTRIBUTING.md](../CONTRIBUTING.md). PRs welcome.
 
-If you want to surface a pattern from your own ventures: open a discussion (when GitHub Discussions are enabled) or just fork and adapt.
+Punya aturan atau skill sendiri yang terbukti jalan? Ceritakan lewat GitHub repo ini, atau salin dan sesuaikan untuk proyek lo.

@@ -9,7 +9,9 @@ node_modules/
 dist/
 build/
 .next/
-.vercel/
 coverage/
 .tmp-*
 *.tmp
+
+# per-machine Claude Code permissions (can allow git push etc) — never publish
+.claude/settings.local.json

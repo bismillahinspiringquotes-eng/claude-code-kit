@@ -1,6 +1,6 @@
 ---
 name: secret-rotation-walkthrough
-description: Use when a secret has been exposed (committed to git, leaked in logs, shared accidentally) and needs immediate rotation across all systems that use it, OR when running a scheduled rotation. Walks through the full rotation cycle without missing a system. Examples cover Supabase keys, Vercel env vars, payment provider secrets, webhook tokens — but the protocol applies to any secret.
+description: Use when a secret has been exposed (committed to git, leaked in logs, shared accidentally) and needs immediate rotation across all systems that use it, OR when running a scheduled rotation. Walks through the full rotation cycle without missing a system. Examples cover Supabase keys, hosting env vars, payment gateway secrets, webhook tokens — but the protocol applies to any secret.
 ---
 
 # Secret rotation walkthrough
@@ -28,19 +28,19 @@ Before generating the new value, list everywhere the OLD value exists. Otherwise
 
 For Supabase service-role key, common locations:
 - Local `.env.local` on developer machines
-- Vercel environment variables (production, preview, development scopes)
+- Hosting platform environment variables (Dokploy, Coolify, Docker env files; every environment: production, staging)
 - VPS environment files (e.g. `/etc/something/.env` for cron worker)
 - GitHub Actions secrets (if CI uses it)
-- Any other deploy platform (Cloudflare Workers, Netlify, etc)
+- Any other deploy platform or edge function host
 - Backup/snapshot scripts running on a server
 - Internal tooling (admin scripts a teammate runs locally)
 
-For payment provider secret (Xendit, Stripe, etc):
+For payment gateway secret (DOKU, Midtrans, Stripe, etc):
 - Same list as above
 - Plus: the webhook configuration on the provider dashboard (signature secret)
 - Plus: any third-party integration that calls the API on your behalf
 
-For Cloudflare API token:
+For a CDN / DNS API token:
 - Wherever DNS automation runs
 - Wherever cache purges run
 - Wherever certificate provisioning runs
@@ -51,8 +51,8 @@ For Cloudflare API token:
 
 - Generate via the provider's official UI or CLI. Never reuse old values, never derive from old values.
 - For Supabase: project settings → API → reset service role key.
-- For Xendit / Stripe: dashboard → API keys → create new + record old key for revocation later.
-- For Cloudflare: tokens UI → create new with same scopes.
+- For a payment gateway: dashboard → API keys → create new + record old key for revocation later.
+- For a CDN / DNS provider: tokens page → create new with the same scopes.
 
 Save the new value somewhere temporary but secure (your password manager). Don't paste into chat (this counts as another leak).
 
@@ -71,9 +71,9 @@ For each system:
 - Verify the service still works (curl an endpoint, check logs).
 - THEN move to next system.
 
-For Vercel specifically:
-- Update env var in Vercel dashboard (set in all environments: production, preview, development).
-- Trigger a deploy (push a no-op commit, or use Vercel "Redeploy" button).
+For a hosting dashboard (Dokploy, Coolify, etc.):
+- Update the env var in the dashboard (every environment: production, staging).
+- Trigger a redeploy so the app picks up the new value.
 - Verify the deployed app still works.
 
 For VPS-based services:
@@ -86,7 +86,7 @@ For VPS-based services:
 Only after Phase 3 is done across ALL systems.
 
 - For most providers: dashboard has a "revoke" or "delete" action on the old key.
-- For some providers (Cloudflare, AWS): old keys remain valid until explicitly deleted — delete them.
+- For some providers (AWS, many CDN/DNS providers): old keys remain valid until explicitly deleted — delete them.
 - For self-managed (HMAC secrets, custom tokens): the new value replacing the old in env effectively revokes if there's no fallback.
 
 **Verify revocation:** try to use the OLD value to make a request. Should fail (401, 403). If it still works, revocation didn't happen — investigate.

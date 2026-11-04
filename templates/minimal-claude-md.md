@@ -77,6 +77,9 @@
 - No `console.log` in production code paths
 - No hardcoded secrets / API keys
 
+## Skill dasar  *(pasang sekali, berlaku di semua proyek)*
+Empat skill di `claude-code-kit/skills/` menambal kebiasaan buruk Claude yang paling sering: tulisan berbau AI, lupa memakai alat yang ada, bilang "selesai" tanpa bukti, dan kebanyakan nanya. Cara pasang: `claude-code-kit/skills/README.md`.
+
 ## How to extend this file
 - Hit a problem twice? → add a rule + one-line **Why:** capturing the cause
 - Every 2 weeks: re-read your CLAUDE.md. Delete rules that haven't been triggered.

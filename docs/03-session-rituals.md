@@ -42,7 +42,7 @@ Mid-session signal: save strategic decisions to `DECISIONS.md` (or equivalent). 
 
 ### `sync!`
 
-For multi-repo setups: pull cross-repo state. The opposite of `accio!` (which writes brief), `sync!` reads briefs from all your repos and updates the central memory. See ROADMAP `02-cross-repo-memory.md`.
+For multi-repo setups: pull cross-repo state. The opposite of `accio!` (which writes brief), `sync!` reads briefs from all your repos and updates the central memory. See ROADMAP `15-cross-repo-memory.md`.
 
 ## Why pick weird words
 
@@ -82,4 +82,4 @@ The accio ritual contents may vary per-repo (different files to update), but the
 - [`templates/CLAUDE.md.template`](../templates/CLAUDE.md.template) — has trigger word section
 - [`templates/minimal-claude-md.md`](../templates/minimal-claude-md.md) — shows triggers as optional add-on (not required day 1)
 - [`01-claude-md-rules.md`](01-claude-md-rules.md) — covers WHY weird words don't collide with conversation
-- ROADMAP `02-cross-repo-memory.md` — full sync! / accio! producer-consumer protocol (planned)
+- ROADMAP `15-cross-repo-memory.md` — full sync! / accio! producer-consumer protocol (planned)

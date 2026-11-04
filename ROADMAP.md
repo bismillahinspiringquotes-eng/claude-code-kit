@@ -1,20 +1,20 @@
 # Roadmap
 
-What's planned. For what's already shipped, see [docs/INDEX.md](docs/INDEX.md) + [skills/INDEX.md](skills/INDEX.md).
+What's planned. For what's already shipped, see [docs/INDEX.md](docs/INDEX.md) + [skills/README.md](skills/README.md).
 
 This file exists so the docs index stays honest about what's actually there. "Planned" promises tend to rot — if a doc has been planned for 3 months without being written, it probably shouldn't be planned at all.
 
 ## Priority order (next ~5 to write)
 
-1. **`docs/02-cross-repo-memory.md`** — sync! flow, brief-file producer/consumer protocol, UTC-Z timestamp lock. Source: existing canonical memory + accio definitions.
+1. **`docs/15-cross-repo-memory.md`** — sync! flow, brief-file producer/consumer protocol, UTC-Z timestamp lock. Source: existing canonical memory + accio definitions.
 2. **`docs/11-recon-first.md`** — read codebase before writing code; lock spec in decision files. Source: established practice across 8+ repos.
 3. **`docs/12-multi-tenant-rls.md`** — row-level security discipline + restore drill. Stack-agnostic, examples Supabase.
-4. **`docs/13-per-operator-payments.md`** — per-operator payment routing vs marketplace-fee model. SEA reality (Xendit > Stripe for many SEA cases).
-5. **`docs/20-secret-rotation.md`** — extract from `skills/secret-rotation-walkthrough.md` into doc form + recent destructive-action lesson.
+4. **`docs/13-per-operator-payments.md`** — per-operator payment routing vs marketplace-fee model. Indonesian reality: local gateways (DOKU, Midtrans) and blocked-country fallbacks.
+5. **`docs/20-secret-rotation.md`** — extract from `skills/secret-rotation-walkthrough/SKILL.md` into doc form + recent destructive-action lesson.
 
 ## Methodology (planned)
 
-- `docs/02-cross-repo-memory.md` — sync! flow, brief-file producer/consumer protocol, UTC-Z timestamp lock
+- `docs/15-cross-repo-memory.md` — sync! flow, brief-file producer/consumer protocol, UTC-Z timestamp lock
 
 ## Patterns (planned)
 
@@ -25,10 +25,10 @@ This file exists so the docs index stays honest about what's actually there. "Pl
 
 ## Runbooks / ops (planned)
 
-- `docs/20-secret-rotation.md` — full rotation runbook (extracts + extends `skills/secret-rotation-walkthrough.md`)
+- `docs/20-secret-rotation.md` — full rotation runbook (extracts + extends `skills/secret-rotation-walkthrough/SKILL.md`)
 - `docs/21-database-backup.md` — backup + restore drill (stack-agnostic; examples Postgres + R2)
 - `docs/22-error-monitoring.md` — Sentry / GlitchTip / BetterStack patterns
-- `docs/23-cost-monitoring.md` — billing-API → alert hooks (Supabase + Vercel patterns)
+- `docs/23-cost-monitoring.md` — billing-API → alert hooks (Supabase + self-hosted server patterns)
 - `docs/24-dns-migration.md` — registrar move + nameserver swap with zero downtime
 
 ## Holding-company patterns / advanced (planned)

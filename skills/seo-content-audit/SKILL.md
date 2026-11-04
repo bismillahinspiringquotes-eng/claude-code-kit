@@ -1,6 +1,6 @@
 ---
 name: seo-content-audit
-description: Use when auditing a website's content/markup for on-page SEO basics — title tags, meta descriptions, heading hierarchy, image alt text, internal linking, structured data presence, sitemap correctness. Stack-agnostic; examples reference common Next.js + Vercel patterns but apply to any web framework.
+description: Use when auditing a website's content/markup for on-page SEO basics — title tags, meta descriptions, heading hierarchy, image alt text, internal linking, structured data presence, sitemap correctness. Stack-agnostic; examples reference common Next.js patterns but apply to any web framework.
 ---
 
 # SEO audit — on-page content

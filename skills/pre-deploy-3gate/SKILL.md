@@ -1,6 +1,6 @@
 ---
 name: pre-deploy-3gate
-description: Use right before a production deploy or when you're about to claim work is "shipped". Runs the 3-gate verification (type check passes, build succeeds, live URL serves correct content) and refuses to call work shipped until all three gates pass. Operationalizes the SHIP VERIFICATION RULE from docs/01-claude-md-rules.md. Stack-agnostic; examples use Next.js + Vercel.
+description: Use right before a production deploy or when you're about to claim work is "shipped". Runs the 3-gate verification (type check passes, build succeeds, live URL serves correct content) and refuses to call work shipped until all three gates pass. Operationalizes the SHIP VERIFICATION RULE from docs/01-claude-md-rules.md. Stack-agnostic; examples use Next.js on a self-hosted server.
 ---
 
 # Pre-deploy 3-gate verification
@@ -37,7 +37,7 @@ Run them IN ORDER. Don't skip ahead. If gate N fails, stop — don't run gate N+
 
 **How to run:**
 - For Next.js: `pnpm build` or `npm run build`.
-- For Vercel: this is what runs server-side on every deploy.
+- For a hosting platform (Dokploy, Coolify, a VPS with Docker, etc.): this is what runs on every deploy.
 - For other platforms: their build command.
 
 **Pass criteria:** exit code 0, build artifact produced (`.next/` for Next.js, `dist/` for many tools, etc.).

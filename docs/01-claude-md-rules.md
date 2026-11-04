@@ -57,33 +57,31 @@ Kata-kata pendek yang Claude harus recognize sebagai command, bukan obrolan bias
 
 Hemat token di **output**, jangan di **proses**.
 
-## 4. Confirmation sebelum code/push (tapi di-balance)
+## 4. Tanya seperlunya (bukan konfirmasi tiap langkah)
 
 ```
-- Before coding → "Gue tangkep: [X]. Bener?"
-- Ambiguous instruction → "Lo maksud A atau B?"
-- Contradicts previous decision → "Heads up — lo udah decide [X]. Override?"
+- Sudah diizinkan, sudah ada contohnya, atau bisa dicek sendiri → kerjakan, lapor hasil + bukti.
+- Tanya cuma untuk: uang yang belum pernah diputus, aksi yang tidak bisa dibatalkan,
+  kirim pesan keluar atas nama lo, akses/kredensial yang cuma lo punya.
+- Kalau tetap tanya: satu pertanyaan, bawa rekomendasi, bawa alasan + bukti.
+- "go" / "ya" / "gas" → eksekusi, jangan ulang rencana.
+- Izin tidak hangus karena ganti sesi.
 ```
 
-Yang sering ke-miss: rule sebaliknya juga harus ada, biar Claude ga jadi over-cautious.
+**Kenapa:** versi awal aturan ini menyuruh Claude konfirmasi sebelum tiap coding ("Gue tangkep: X. Bener?"). Hasilnya Claude jadi tombol tanya: hal yang sudah diizinkan berhari-hari lalu ditanyakan lagi tiap sesi baru. Pemilik proyek akhirnya menulis di baris paling atas: "JANGAN KEBANYAKAN NANYA YANG UDAH ADA IZINNYA. CAPEK." Versi lengkapnya ada di skill [`tanya-seperlunya`](../skills/tanya-seperlunya/SKILL.md).
+
+## 5. Catat keputusan saat diputus, jangan nunggu konteks penuh
 
 ```
-- When user says "execute" / "go" / "ya" → execute, don't restate plan.
-- Trust granted = ship it.
+- Keputusan, aturan baru, atau koreksi → tulis ke berkasnya SAAT itu juga
+  (DECISIONS.md, CLAUDE.md, berkas memori), bukan di akhir sesi.
+- Konteks yang hampir penuh dirangkum otomatis oleh Claude Code; jangan berhenti kerja
+  atau minta sesi baru cuma karena konteks.
+- Yang tidak pernah ditulis ke berkas akan hilang dari ingatan sesi berikutnya,
+  walau masih ada di transkrip.
 ```
 
-Tanpa pasangan kedua ini, Claude bakal nanya "Mau gue lanjut?" 3x dalam satu task. Boros.
-
-## 5. Mid-session checkpoint (70% rule)
-
-```
-- Context approaching 70% → proactive checkpoint
-- Say: "Context 70%. Checkpoint saved. Safe to /clear."
-- Never hit 100% without saving
-- Next session reads checkpoint → continues from exact spot
-```
-
-**Kenapa:** Context window 100% = forced auto-summarize yang bisa drop info penting (decision rationale, file paths yang udah di-recon, edge case yang udah di-flag). 70% = masih ada ruang buat write coherent checkpoint. Proactive, bukan reactive.
+**Kenapa:** dulu aturannya "simpan di 70% konteks lalu /clear". Dalam praktik itu bikin kerja berhenti di tengah dan sesi baru mulai dari ringkasan yang bolong. Yang benar-benar menyelamatkan adalah menulis keputusan ke berkas pada saat keputusan itu dibuat.
 
 ## 6. Voice register modes
 
@@ -138,7 +136,7 @@ Gate 3: curl prod URL → content match ← user-facing reality
 
 Type check passing ≠ build success. Build success ≠ user-facing works. Tiap gate independent. Skip salah satu = roulette.
 
-Pernah ada juga incident TypeScript pass tapi Vercel build silently failed karena lint-as-error di production mode. 24 jam serve stale code. Lesson: gate 2 is not optional.
+Pernah ada juga incident TypeScript pass tapi build di platform hosting silently failed karena lint-as-error di production mode. 24 jam serve stale code. Lesson: gate 2 is not optional.
 
 ---
 

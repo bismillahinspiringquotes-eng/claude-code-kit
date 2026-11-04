@@ -74,6 +74,6 @@ This file is the **producer side** of the cross-repo memory protocol.
 4. Run `accio!` ritual which updates this file + commits.
 5. Consumer side (ruby-assistant or equivalent strategic-memory folder) pulls via `sync!` and applies updates.
 
-See `docs/02-cross-repo-memory.md` (planned) for full protocol.
+See `docs/15-cross-repo-memory.md` (planned) for full protocol.
 
 This pattern adapted from running 8+ ventures under one holding. See parent `claude-code-kit` repo for context.
