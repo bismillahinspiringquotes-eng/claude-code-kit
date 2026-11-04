@@ -15,3 +15,6 @@ coverage/
 
 # per-machine Claude Code permissions (can allow git push etc) — never publish
 .claude/settings.local.json
+
+# catatan pribadi mode asisten — tidak pernah ikut ke GitHub (punya git lokal sendiri)
+asisten/

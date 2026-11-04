@@ -40,6 +40,25 @@ Masuk ke folder proyek lo, jalankan `claude`, ketik `/skills`. Empat nama tadi h
 
 **Kenapa nggak minta Claude yang pasang?** Claude Code waspada terhadap repo dari internet yang menyuruhnya menulis ke folder pengaturannya sendiri, dan itu sikap yang benar. Jadi pemasangan dilakukan lo sendiri dengan satu perintah salin yang isinya bisa lo baca.
 
+## Jadikan asisten pribadi
+
+Mau asisten yang ingat keputusan, aturan, dan pekerjaan lo dari sesi ke sesi? Ganti `namaassistant` dengan nama yang lo mau:
+
+```
+git clone https://github.com/bismillahinspiringquotes-eng/claude-code-kit.git ~/Documents/namaassistant
+cd ~/Documents/namaassistant
+claude
+```
+
+Lalu ketik `start`. Claude menanyakan nama lo dan apa saja yang lo urus, lalu menyiapkan folder `asisten/` berisi catatan sesi, keputusan, aturan pribadi, dan memori. Empat skill dasar langsung aktif di folder ini tanpa perlu dipasang.
+
+Perintah sehari-hari:
+- `start` — Claude membaca catatan lo dan melapor: lagi apa, terakhir apa, berikutnya apa, apa yang nunggu lo.
+- `monyet!` atau `catat itu` — simpan keputusan/aturan/fakta yang barusan dibahas.
+- `accio!` — tutup sesi: rapikan daftar kerja, simpan riwayat.
+
+**Jangan di-fork.** Fork dari repo publik ikut publik, padahal isi `asisten/` itu catatan pribadi. Cukup clone seperti di atas. Folder `asisten/` tidak pernah ikut ke GitHub, dan riwayatnya disimpan di laptop lo sendiri. Kalau kit ini diperbarui, ambil versi barunya dengan `git pull`; catatan lo tidak tersentuh.
+
 ## Kalau Claude masih ngaco
 
 | Gejala | Baca |
