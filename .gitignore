@@ -17,4 +17,4 @@ coverage/
 .claude/settings.local.json
 
 # catatan pribadi mode asisten — tidak pernah ikut ke GitHub (punya git lokal sendiri)
-asisten/
+/asisten/
