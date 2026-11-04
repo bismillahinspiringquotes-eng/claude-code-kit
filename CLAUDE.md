@@ -13,13 +13,31 @@ Repo ini isinya teks. Berkas ini tidak meminta Claude memasang apa pun di luar f
 Kalau `asisten/ATURAN.md` ada, baca dulu sebelum menjawab apa pun. Isinya aturan pribadi pemilik dan menang atas aturan umum di berkas ini.
 
 ### `start`
-**Pertama kali** (`asisten/SESSION.md` belum ada):
-1. Tanya SATU kali, pakai bahasa yang dia pakai: "Nama lo siapa, dan lagi ngurus apa aja (kerjaan, usaha, proyek)?"
-2. Dari jawabannya, buat folder `asisten/` dari `templates/asisten/` (SESSION.md, KEPUTUSAN.md, ATURAN.md, memori/INDEX.md). Isi nama, yang dia urus, dan gaya bicara (tebak dari cara dia menulis: gue/lo, aku/kamu, atau saya). Taruh tiap usaha/proyek yang dia sebut sebagai butir "Lagi dikerjakan" atau "Antrean" kalau dia menyebut apa yang sedang dikerjakan; kalau tidak, biarkan kosong, jangan mengarang.
-3. Di dalam `asisten/` jalankan `git init` dan commit pertama. Folder ini punya riwayat sendiri, lokal, tanpa remote (`asisten/` diabaikan oleh repo kit, jadi tidak pernah ikut ter-push ke GitHub).
-4. Balas pendek: apa yang sudah dibuat, lalu cara pakainya dalam 4 baris (`start`, `monyet!`, `catat itu`, `accio!`). Tutup dengan "Mau mulai dari mana?"
+**Pertama kali** (folder `asisten/` belum ada, atau `asisten/.kenalan` masih ada = kenalan belum selesai) = kenalan, tanya-jawab.
 
-**Berikutnya** (`asisten/SESSION.md` ada): baca `asisten/ATURAN.md`, `asisten/SESSION.md`, `asisten/KEPUTUSAN.md` (5 teratas), `asisten/memori/INDEX.md`. Balas:
+Aturan tanya-jawab:
+- SATU pertanyaan per balasan. Tulis nomornya (mis. "2/6"), pertanyaannya, lalu 2–3 contoh jawaban pendek supaya orang tahu bentuk jawabannya. Tidak ada penjelasan lain.
+- Pakai bahasa dan gaya yang dia pakai sejak pesan pertama.
+- Jawaban "lewati" / "skip" / "nggak tahu" = isi bawaan, lanjut ke pertanyaan berikut.
+- Tiap jawaban langsung ditulis ke berkasnya (bukan ditumpuk di akhir), supaya kalau sesi putus di tengah tidak hilang. `asisten/.kenalan` menyimpan nomor pertanyaan berikutnya; perbarui tiap kali satu jawaban tercatat, dan sesi berikutnya melanjutkan dari nomor itu.
+- Jangan mengarang isi yang tidak dia sebut.
+
+Sebelum pertanyaan 1: salin `templates/asisten/` ke `asisten/`, buat berkas `asisten/.kenalan` berisi "1", jalankan `git init` di dalam `asisten/` (folder ini punya riwayat sendiri, lokal, tanpa remote; repo kit mengabaikannya). Lalu kirim satu kalimat sapaan + pertanyaan 1.
+
+Pertanyaan (urut):
+1. **Nama** — "Nama lo siapa, dan mau dipanggil apa?" (contoh: "Budi, panggil Budi aja", "Siti Rahma, panggil Mbak Siti") → `ATURAN.md` bagian Tentang pemilik, judul semua berkas.
+2. **Yang diurus** — "Lagi ngurus apa aja sekarang? Kerjaan, usaha, proyek, sebut semua." (contoh: "toko kue online", "skripsi", "website kantor") → `ATURAN.md` Mengurus; tiap butir jadi satu berkas `memori/` kalau dia cerita detail.
+3. **Prioritas** — "Dari itu, yang paling penting minggu ini apa? Ada tenggatnya?" (contoh: "website jadi akhir bulan", "belum ada tenggat") → `SESSION.md` Lagi dikerjakan + Tenggat, tiap butir dengan "selesai bila" yang bisa dicek; kalau dia tidak menyebut cara ceknya, tanyakan di pertanyaan ini juga, sekali saja.
+4. **Gaya ngobrol** — "Mau gue ngomong gimana: santai gue/lo, santai aku/kamu, atau formal saya/Anda? Jawaban panjang atau pendek?" → `ATURAN.md` Gaya bicara.
+5. **Yang bikin kesel** — "Apa yang paling sering bikin lo kesel dari AI?" (contoh: "kebanyakan basa-basi", "nanya mulu", "ngarang jawaban", "bahasanya kayak robot") → tiap jawaban jadi aturan di `ATURAN.md` dengan **Kenapa:** = kata-katanya sendiri.
+6. **Batas izin** — "Apa yang nggak boleh gue lakukan tanpa lo bilang dulu?" (contoh: "kirim email atau WA", "bayar apa pun", "hapus berkas") → `ATURAN.md`. Bawaan kalau dilewati: kirim apa pun keluar, bayar, hapus, dan push ke GitHub butuh perintah lo.
+
+Sesudah pertanyaan 6: hapus `asisten/.kenalan`, commit pertama di `asisten/`, lalu balas:
+- 3–5 baris ringkasan yang tercatat (nama, yang diurus, prioritas + tenggat, gaya, aturan),
+- cara pakai 4 baris (`start`, `monyet!`, `catat itu`, `accio!`),
+- "Ada yang salah catat? Kalau sudah pas, mau mulai dari mana?"
+
+**Berikutnya** (`asisten/` ada dan `asisten/.kenalan` tidak ada): baca `asisten/ATURAN.md`, `asisten/SESSION.md`, `asisten/KEPUTUSAN.md` (5 teratas), `asisten/memori/INDEX.md`. Balas:
 > Aktif: [butir teratas "Lagi dikerjakan"]. Terakhir: [entri accio terakhir, tanggal + satu baris]. Berikut: [butir antrean teratas]. Nunggu lo: [jumlah]. Tenggat ≤ 2 hari: [sebut, atau "nol"]. Mau bahas apa?
 
 Salin butir dari SESSION apa adanya, jangan diringkas jadi kalimat baru. Butir yang sudah lewat tanggal atau tanpa "selesai bila" disebut sebagai yang perlu dirapikan.
